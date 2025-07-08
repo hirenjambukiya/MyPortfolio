@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function downloadFile() {
     const link = document.createElement('a');
-    link.href = '/Resume/MyResumePdf.pdf';  // URL of the file
+    link.href = './Resume/MyResumePdf.pdf';  // URL of the file
     link.download = 'Hiren Jambukiya - Resume.pdf';  // Name for the downloaded file
     document.body.appendChild(link);
     link.click();
