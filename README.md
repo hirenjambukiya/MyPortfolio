@@ -161,14 +161,6 @@ The contact form includes:
 
 To make it functional, replace the simulated submission with actual backend integration.
 
-## 🌙 Dark Mode
-
-The dark mode feature:
-- Toggles between light and dark themes
-- Persists user preference in localStorage
-- Automatically applies saved theme on page load
-- Smooth transitions between themes
-
 ## 📊 Performance Features
 
 - **Throttled Scroll Events**: Optimized scroll handling
@@ -182,7 +174,7 @@ The dark mode feature:
 1. Push code to GitHub repository
 2. Go to Settings > Pages
 3. Select source branch (usually `main`)
-4. Your site will be available at `https://username.github.io/repository-name`
+4. Your site will be available at `https://github.com/hirenjambukiya/MyPortfolio.git`
 
 ### Netlify
 1. Drag and drop the folder to Netlify
@@ -197,9 +189,6 @@ The dark mode feature:
 
 Feel free to fork this project and customize it for your own portfolio. If you find any bugs or have suggestions, please open an issue.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
@@ -210,6 +199,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Made with ❤️ by Hiren**
+**Made with ❤️ by Hiren Jambukiya**
 
 For questions or support, feel free to reach out! 
