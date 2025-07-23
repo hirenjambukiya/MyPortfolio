@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET Services | Templyft</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #2b4eff;
+            --secondary: #0a2540;
+            --accent: #00e4d0;
+            --bg: #f7faff;
+            --card-bg: #fff;
+            --text: #22223b;
+            --shadow: 0 4px 24px rgba(43, 78, 255, 0.08);
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .section-desc {
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(43, 78, 255, 0.13);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.7rem;
+        }
+        .service-list {
+            padding-left: 1.2rem;
+            margin-bottom: 0.7rem;
+        }
+        .service-list li {
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+        .service-example {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            font-size: 0.97rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+        }
+        .tech-stack {
+            background: var(--card-bg);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            padding: 2rem 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .tech-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .tech-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.4rem 1rem;
+            margin: 0.2rem 0.3rem 0.2rem 0;
+            font-size: 0.97rem;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(43, 78, 255, 0.08);
+        }
+        @media (max-width: 991px) {
+            .section-title { font-size: 2rem; }
+            .service-card { padding: 1.5rem 1rem; }
+        }
+        @media (max-width: 767px) {
+            .service-card { margin-bottom: 1.2rem; }
+            .tech-stack { padding: 1.2rem 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="section-title">.NET Development Services</h1>
+        <p class="section-desc">
+            Modern, scalable, and secure solutions for your business. From custom web apps to real-time dashboards, I deliver robust .NET services tailored to your needs.
+        </p>
+        <div class="row">
+            <!-- Custom Web Application Development -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="service-title">Custom Web Application Development</div>
+                    <ul class="service-list">
+                        <li>Fully tailored solutions based on business requirements</li>
+                        <li>Scalable, secure, and fast applications</li>
+                        <li>Responsive UI/UX with modern frameworks</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Database Design & Integration -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <div class="service-title">Database Design & Integration</div>
+                    <ul class="service-list">
+                        <li>SQL Server, PostgreSQL, MySQL database design</li>
+                        <li>CRUD operations, stored procedures, performance tuning</li>
+                        <li>Data migration & integration</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- RESTful API Development -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-plug"></i></div>
+                    <div class="service-title">RESTful API Development</div>
+                    <ul class="service-list">
+                        <li>Secure and fast APIs for web/mobile apps</li>
+                        <li>Authentication, rate limiting, versioning</li>
+                        <li>Swagger/OpenAPI documentation</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Admin Dashboard Development -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="service-title">Admin Dashboard Development</div>
+                    <ul class="service-list">
+                        <li>User-friendly backend for business management</li>
+                        <li>Charts, reports, logs, user management</li>
+                        <li>Role-based access control</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Reporting & Analytics -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="service-title">Reporting & Analytics</div>
+                    <ul class="service-list">
+                        <li>Dynamic reports, charts, and export options (Excel/PDF)</li>
+                        <li>Data filtering and sorting</li>
+                        <li>Business intelligence dashboards</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Real-Time Features -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="service-title">Real-Time Features</div>
+                    <ul class="service-list">
+                        <li>Chat, notifications, live dashboards</li>
+                        <li>SignalR-powered real-time updates</li>
+                        <li>Collaborative tools</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Third-party Integrations -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-plug-circle-bolt"></i></div>
+                    <div class="service-title">Third-party Integrations</div>
+                    <ul class="service-list">
+                        <li>Payment gateways (Razorpay, Stripe, PayPal)</li>
+                        <li>Email (SMTP, SendGrid), SMS, WhatsApp APIs</li>
+                        <li>Google, Facebook, LinkedIn logins</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Deployment & Maintenance -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <div class="service-title">Deployment & Maintenance</div>
+                    <ul class="service-list">
+                        <li>Hosting setup (IIS, Azure, AWS, etc.)</li>
+                        <li>Continuous integration & deployment</li>
+                        <li>Ongoing support and monitoring</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Existing Project Bugfixing -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <div class="service-title">Existing Project Bugfixing</div>
+                    <ul class="service-list">
+                        <li>Legacy code refactoring</li>
+                        <li>Performance optimization</li>
+                        <li>Critical bug fixes and troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- SaaS, ERP, CRM -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="service-title">SaaS, ERP, CRM Solutions</div>
+                    <ul class="service-list">
+                        <li>Multi-tenant SaaS platforms</li>
+                        <li>Custom ERP and CRM development</li>
+                        <li>Business process automation</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Security -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="service-title">Security</div>
+                    <ul class="service-list">
+                        <li>Authentication & authorization (Identity, OAuth2)</li>
+                        <li>Data encryption, secure coding</li>
+                        <li>Vulnerability assessment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Example Solutions -->
+        <div class="mt-5">
+            <h2 class="section-title" style="font-size:2rem;">Example Solutions</h2>
+            <div>
+                <span class="service-example">E-commerce Website</span>
+                <span class="service-example">CMS Website</span>
+                <span class="service-example">Inventory Management</span>
+                <span class="service-example">School/College Management</span>
+                <span class="service-example">Job Portal</span>
+                <span class="service-example">Task Management App</span>
+                <span class="service-example">Booking System</span>
+                <span class="service-example">Healthcare System</span>
+                <span class="service-example">Financial Dashboard</span>
+                <span class="service-example">Helpdesk/Ticketing System</span>
+            </div>
+        </div>
+        <!-- Technologies/Tools -->
+        <div class="tech-stack mt-5">
+            <div class="tech-title"><i class="fas fa-cogs me-2"></i>Technologies & Tools</div>
+            <div>
+                <span class="tech-badge">ASP.NET Core MVC</span>
+                <span class="tech-badge">Razor Pages</span>
+                <span class="tech-badge">Blazor</span>
+                <span class="tech-badge">Entity Framework</span>
+                <span class="tech-badge">Dapper</span>
+                <span class="tech-badge">SQL Server</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">Bootstrap</span>
+                <span class="tech-badge">Tailwind</span>
+                <span class="tech-badge">jQuery</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">SignalR</span>
+                <span class="tech-badge">Chart.js</span>
+                <span class="tech-badge">Highcharts</span>
+                <span class="tech-badge">Identity</span>
+                <span class="tech-badge">API Integrations</span>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
