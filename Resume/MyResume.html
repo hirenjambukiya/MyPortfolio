@@ -2,299 +2,625 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hiren Jambukiya - Resume</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <style>
-        :root {
-            --bg: #f8f9fa;
-            /* Light gray background */
-            --white: #ffffff;
-            /* Main content background */
-            --primary: #7e8981;
-            /* Dark gray for headings */
-            --text: #212529;
-            /* Standard text (blackish gray) */
-            --gray: #6c757d;
-            /* Secondary/subtle text */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiren Jambukiya – .NET Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body.dark {
-            --bg: #1e1e1e;
-            --white: #2c2c2c;
-            --primary: #64b5f6;
-            --text: #f5f5f5;
-            --gray: #ccc;
-        }
+    :root {
+      --primary: #7e8981;
+      --primary-dark: #6a756e;
+      --bg: #f8f9fa;
+      --white: #ffffff;
+      --text: #212529;
+      --gray: #6c757d;
+      --light: #f0f2f0;
+      --border: #d6dbd7;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px 15px;
+    }
 
-        .resume-container {
-            padding: 5px 20px;
-            max-width: 1100px;
-            margin: auto;
-            position: relative;
-        }
+    .resume {
+      display: grid;
+      grid-template-columns: 28% 72%;
+      max-width: 1050px;
+      margin: auto;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+      overflow: hidden;
+    }
 
-        .resume {
-            display: grid;
-            grid-template-columns: 30% 70%;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+    /* ══ SIDEBAR ══ */
+    .sidebar {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 30px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
 
-        .sidebar {
-            background: var(--primary);
-            color: white;
-            padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    /* avatar */
+    .avatar-wrap {
+      text-align: center;
+      margin-bottom: 14px;
+    }
 
-        .sidebar h2 {
-            margin: 10px 0 5px;
-        }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.7);
+      background: var(--primary-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
 
-        .sidebar .title {
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
+    .avatar-wrap h2 {
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
 
-        .sidebar img.profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid white;
-        }
+    .avatar-wrap .role {
+      font-size: 11.5px;
+      opacity: 0.85;
+      font-weight: 400;
+    }
 
-        .sidebar section {
-            width: 100%;
-            margin-top: 5px;
-        }
+    /* sidebar section */
+    .s-sec {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+    }
 
-        .sidebar section h3 {
-            font-size: 16px;
-            border-bottom: 1px solid white;
-            padding-bottom: 5px;
-            margin-bottom: 8px;
-        }
+    .s-sec h3 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      opacity: 0.75;
+    }
 
-        .sidebar ul {
-            list-style: none;
-            padding-left: 0;
-            display: inline;
-        }
+    /* contact */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-        .sidebar ul li {
-            font-size: 14px;
-            margin-bottom: 6px;
-        }
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
 
-        .main-content {
-            padding: 30px;
-        }
+    .contact-list li i {
+      font-size: 13px;
+      margin-top: 1px;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
 
-        .main-content h1 {
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
+    .contact-list a {
+      color: #fff;
+      text-decoration: none;
+    }
 
-        .main-content h4 {
-            font-size: 16px;
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
+    /* skill list */
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
-        .main-content .summary {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
+    .skill-list li {
+      font-size: 12px;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      line-height: 1.4;
+    }
 
-        .main-content h2 {
-            font-size: 20px;
-            color: var(--primary);
-            margin-top: 20px;
-            border-left: 5px solid var(--primary);
-            padding-left: 10px;
-        }
+    /* plain bullet list */
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
-        .item {
-            margin-top: 15px;
-        }
+    .bullet-list li {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .item h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
+    .bullet-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+      flex-shrink: 0;
+    }
 
-        .item span {
-            font-size: 13px;
-            color: var(--gray);
-        }
+    /* ══ MAIN ══ */
+    .main {
+      padding: 30px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        .item p {
-            font-size: 14px;
-            margin-top: 5px;
-            line-height: 1.5;
-        }
+    /* section header */
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
 
-        @media print {
+    .sec-head i {
+      color: var(--primary);
+      font-size: 16px;
+    }
 
-            .print-btn,
-            .dark-mode-btn {
-                display: none;
-            }
+    .sec-head h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
 
-            body {
-                background: white;
-            }
-        }
-    </style>
+    .sec-rule {
+      border: none;
+      border-top: 2px solid var(--primary);
+      margin-bottom: 14px;
+      opacity: 0.4;
+    }
+
+    /* about */
+    .about-text {
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--gray);
+      text-align: justify;
+    }
+
+    /* experience */
+    .exp-item {
+      margin-bottom: 14px;
+    }
+
+    .exp-item h3 {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .exp-item .meta {
+      font-size: 12px;
+      color: var(--primary-dark);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .exp-item ul {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-item ul li {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+
+    /* education */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .edu-row h3 {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .edu-row p {
+      font-size: 12.5px;
+      color: var(--gray);
+    }
+
+    .edu-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .cgpa-badge {
+      display: inline-block;
+      background: var(--light);
+      border: 1px solid var(--border);
+      color: var(--primary-dark);
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .edu-year {
+      font-size: 11.5px;
+      color: var(--gray);
+    }
+
+    /* projects — resume style, no cards */
+    .proj-item {
+      margin-bottom: 10px;
+      padding-left: 12px;
+      border-left: 2px solid var(--border);
+    }
+
+    .proj-item strong {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .proj-item .proj-stack {
+      font-size: 11px;
+      color: var(--primary-dark);
+      font-weight: 500;
+      margin: 2px 0 4px;
+    }
+
+    .proj-item p {
+      font-size: 12.5px;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+
+    /* achievements */
+    .ach-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+
+    .ach-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-dark);
+      font-size: 14px;
+    }
+
+    .ach-item h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .ach-item p {
+      font-size: 12.5px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    .ach-date {
+      font-size: 11px;
+      color: var(--primary-dark);
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .resume {
+        box-shadow: none;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .resume {
+        grid-template-columns: 1fr;
+      }
+
+      .main {
+        padding: 20px 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="resume-container">
-        <div class="resume">
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <img src="/Images/Hiren.jpg" alt="Hiren Jambukiya" class="profile-img" />
-                <h2>Hiren Jambukiya</h2>
-                <p class="title">.NET Full Stack Developer</p>
+  <div class="resume">
 
-                <section>
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="bi bi-phone"></i> +91 9316705450</li>
-                        <li><i class="bi bi-envelope"></i> jambukiyahiren30@gmail.com</li>
-                        <li><i class="bi bi-globe"></i> www.hirenportfolio.com</li>
-                    </ul>
-                </section>
+    <!-- ══ SIDEBAR ══ -->
+    <aside class="sidebar">
 
-                <section>
-                    <h3><i class="bi bi-tools"></i> Techanical Skills</h3>
-                    <ul>
-                        <li>.NET Core MVC</li>
-                        <li>.Net Core APIs</li>
-                        <li>.Net Framework</li>
-                        <li>Entity Framework</li>
-                        <li>SignalR, APIs</li>
-                        <li>C#, LINQ</li>
-                        <li>VBA</li>
-                        <li>Dapper</li>
-                        <li>SQL Server</li>
-                        <li>MySQL</li>
-                        <li>PostgreSQL</li>
-                        <li>Basic React Js</li>
-                        <li>HTML5, CSS3, Bootstrap, JavaScript</li>
-                        <li>Git, SVN</li>
-                        <li>IIS, Github Pages</li>
-                    </ul>
-                </section>
+      <div class="avatar-wrap">
+        <div class="avatar">HJ</div>
+        <h2>Hiren Jambukiya</h2>
+        <p class="role">.NET Full Stack Developer</p>
+      </div>
 
-                <section>
-                    <h3><i class="bi bi-people"></i> Soft Skills</h3>
-                    <ul>
-                        <li>Team Collaboration</li>
-                        <li>Problem Solving</li>
-                        <li>Adaptability</li>
-                        <li>Accountability</li>
-                        <li>Self-Motivation</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3><i class="bi bi-translate"></i> Languages</h3>
-                    <ul>
-                        <li>English</li>
-                        <li>Hindi</li>
-                        <li>Gujarati</li>
-                    </ul>
-                </section>
-            </aside>
+      <!-- Contact -->
+      <div class="s-sec">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li><i class="bi bi-geo-alt-fill"></i> Ahmedabad, Gujarat, India</li>
+          <li><i class="bi bi-phone-fill"></i> +91 93167 05450</li>
+          <li><i class="bi bi-envelope-fill"></i> jambukiyahiren30@gmail.com</li>
+          <li><i class="bi bi-globe2"></i> <a href="https://hirenjambukiya.github.io/MyPortfolio/"
+              target="_blank">hirenjambukiya.github.io/MyPortfolio</a></li>
+          <li><i class="bi bi-linkedin"></i> <a href="https://in.linkedin.com/in/hiren-jambukiya-618349267"
+              target="_blank">linkedin.com/in/hirenjambukiya</a></li>
+        </ul>
+      </div>
 
-            <!-- Main Content -->
-            <main class="main-content">
-                <section>
-                    <h2><i class="bi bi-person-fill section-icon"></i> About Me</h2>
-                    <h4>.NET Core Full Stack Developer</h4>
-                    <p class="summary">I am a dedicated Full Stack .NET Developer with over 3 years of experience in
-                        designing and developing enterprise-grade web applications. My skill set spans the entire
-                        development lifecycle — from crafting robust backend APIs to building intuitive frontend
-                        interfaces.
+      <!-- Technical Skills -->
+      <div class="s-sec">
+        <h3>Technical Skills</h3>
+        <ul class="skill-list">
+          <li>ASP.NET Core MVC</li>
+          <li>.NET Core APIs</li>
+          <li>.NET Framework</li>
+          <li>C# &amp; LINQ</li>
+          <li>Entity Framework</li>
+          <li>Dapper</li>
+          <li>SignalR</li>
+          <li>SQL Server</li>
+          <li>MySQL &amp; PostgreSQL</li>
+          <li>React JS (Basic)</li>
+          <li>HTML5, CSS3, Bootstrap</li>
+          <li>JavaScript</li>
+          <li>VBA</li>
+          <li>Git &amp; SVN</li>
+          <li>IIS, GitHub Pages</li>
+        </ul>
+      </div>
 
-                        I specialize in ASP.NET Core, MVC architecture, RESTful API development, and real-time
-                        communication using SignalR. I am passionate about writing clean, scalable, and maintainable
-                        code that delivers real-world value and performance. I thrive in collaborative environments and
-                        continuously seek to improve both technically and professionally.</p>
-                </section>
+      <!-- Soft Skills -->
+      <div class="s-sec">
+        <h3>Soft Skills</h3>
+        <ul class="bullet-list">
+          <li>Team Collaboration</li>
+          <li>Problem Solving</li>
+          <li>Adaptability</li>
+          <li>Accountability</li>
+          <li>Self-Motivation</li>
+        </ul>
+      </div>
 
-                <section>
-                    <h2><i class="bi bi-briefcase-fill section-icon"></i> Experience</h2>
-                    <div class="item">
-                        <h3>Junior Developer – Microvista Technologies Pvt. Ltd <span>(APR-2023 – Present)</span></h3>
-                        <li>Integrated and consumed RESTful APIs to enhance application functionality and data flow.
-                        </li>
-                        <li>Led both frontend and backend tasks, contributing to the end-to-end delivery of key
-                            features.</li>
-                        <li>Optimized application performance and ensured code quality through structured development
-                            practices.</li>
-                    </div>
-                </section>
+      <!-- Languages -->
+      <div class="s-sec">
+        <h3>Languages</h3>
+        <ul class="bullet-list">
+          <li>English</li>
+          <li>Hindi</li>
+          <li>Gujarati</li>
+        </ul>
+      </div>
 
-                <section>
-                    <h2><i class="bi bi-mortarboard-fill section-icon"></i> Education</h2>
-                    <div class="item">
-                        <h3>B.Tech – Silver Oak University <span>2022 – 2026 (Pursuing)</span></h3>
-                        <p>Graduated with Computer Engineering.</p>
-                    </div>
-                </section>
+    </aside>
 
-                <section>
-                    <h2><i class="bi bi-folder-fill section-icon"></i> Projects(Self-Created)</h2>
-                    <div class="item summary">
-                        <p><strong>E-Commerce Platform:</strong> A full-featured online store with product listings,
-                            user authentication, cart, and order management. Built using ASP.NET Core MVC with SQL
-                            Server and Bootstrap responsive UI.</p>
-                        <p><strong>Real-Time Chat Application:</strong> Implemented a web-based chat app using SignalR for real-time communication. Includes user presence tracking, private/public messaging, and a clean, modern UI.</p>
-                        <p><strong>Portfolio Website:</strong> A fully responsive personal portfolio built with HTML, CSS, and JavaScript. Showcases projects, resume, and contact information with Email JS.</p>
-                        <p><strong>Task Management System:</strong> Designed a multi-user task tracker with roles, deadlines, and status filters. Built with ASP.NET Core MVC and Entity Framework for a scalable and maintainable backend.</p>
-                    </div>
-                </section>
-                <section>
-                    <h2><i class="bi bi-folder-check section-icon"></i> Projects(Previous Company)</h2>
-                    <div class="item summary">
-                        <p><strong>Annual and Periodic Submission System:</strong>Developed a system where users input data via Excel, which is converted to XML for submission. The system validates the XML against predefined rules and generates dynamic HTML reports for review data.</p>
-                        <p><strong>Automation Penalty System:</strong> Built an automated penalty engine that calculates penalties based on submission types, delays, compliance issues, resubmissions, and reminders. It triggers alerts and sends email notifications to stakeholders.</p>
-                        <p><strong>Single Filing API:</strong>Created a secure API to facilitate submission flow between different exchanges such as BSE and NSE. Ensures consistent data handling and standardized communication across platforms.</p>
-                        <p><strong>Admin Dashboard:</strong> Designed an admin panel displaying submission reports, MIS data, and member activity. Includes export functionality for Excel and PDF, providing insightful overviews for compliance tracking.</p>
-                    </div>
-                </section>
-                <section>
-                    <h2><i class="bi bi-trophy-fill section-icon"></i> Achievements</h2>
-                    <div class="item">
-                        <h3><strong>Employee Of The Month – March 2024</strong></h3>
-                        <p>Recognized for outstanding performance and contributions to team success at Microvista Technologies.</p>
-                        <h3><strong>The Emerging Talent Of The Year 2023-24</strong></h3>
-                        <p>Awarded for exceptional skills and potential in software development, demonstrating a strong commitment to learning and growth.</p>
-                    </div>
-                </section>
-            </main>
+    <!-- ══ MAIN CONTENT ══ -->
+    <main class="main">
+
+      <!-- About -->
+      <section>
+        <div class="sec-head"><i class="bi bi-person-fill"></i>
+          <h2>About Me</h2>
         </div>
-    </div>
+        <hr class="sec-rule">
+        <p class="about-text">
+          Dedicated <strong>.NET Full Stack Developer</strong> with <strong>3+ years of professional experience</strong>
+          at Microvista Technologies Pvt. Ltd., specialising in enterprise-grade web applications across the full
+          development lifecycle. Proficient in ASP.NET Core MVC, RESTful API development, SignalR real-time
+          communication, and multi-database environments including SQL Server, MySQL, and PostgreSQL. Passionate
+          about writing clean, scalable, and maintainable code while continuously growing technically and
+          professionally.
+        </p>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <div class="sec-head"><i class="bi bi-briefcase-fill"></i>
+          <h2>Experience</h2>
+        </div>
+        <hr class="sec-rule">
+        <div class="exp-item">
+          <h3>Junior .NET Developer — Microvista Technologies Pvt. Ltd.</h3>
+          <div class="meta"><i class="bi bi-calendar3"></i>&nbsp; April 2023 – Present &nbsp;|&nbsp; Ahmedabad, Gujarat
+          </div>
+          <ul>
+            <li>Designed, developed, and consumed <strong>RESTful APIs</strong> to enhance application functionality and
+              streamline data flow across modules.</li>
+            <li>Led end-to-end delivery of key features across <strong>frontend (HTML/CSS/Bootstrap/JS)</strong> and
+              <strong>backend (ASP.NET Core, C#, EF Core)</strong>.</li>
+            <li>Built an <strong>XML-based submission and validation engine</strong> integrated with dynamic HTML report
+              generation for regulatory compliance.</li>
+            <li>Developed an <strong>automated penalty calculation engine</strong> with email notifications, reducing
+              manual compliance effort significantly.</li>
+            <li>Implemented a <strong>Single Filing API</strong> to standardize data communication between BSE and NSE
+              exchanges.</li>
+            <li>Optimised SQL queries and application logic, improving overall <strong>system performance and code
+                maintainability</strong>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <div class="sec-head"><i class="bi bi-mortarboard-fill"></i>
+          <h2>Education</h2>
+        </div>
+        <hr class="sec-rule">
+        <div class="edu-row">
+          <div>
+            <h3>B.Tech in Computer Engineering</h3>
+            <p>Silver Oak University, Ahmedabad</p>
+          </div>
+          <div class="edu-right">
+            <div class="cgpa-badge">CGPA: 9.46 / 10</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal Projects -->
+      <section>
+        <div class="sec-head"><i class="bi bi-folder-fill"></i>
+          <h2>Projects (Self-Created)</h2>
+        </div>
+        <hr class="sec-rule">
+
+        <div class="proj-item">
+          <strong>E-Commerce Platform</strong>
+          <div class="proj-stack">ASP.NET Core MVC &nbsp;|&nbsp; SQL Server &nbsp;|&nbsp; EF Core &nbsp;|&nbsp;
+            Bootstrap</div>
+          <p>Full-featured online store with product listings, user authentication, cart management, and order tracking
+            with admin panel.</p>
+        </div>
+
+        <div class="proj-item">
+          <strong>Real-Time Chat Application</strong>
+          <div class="proj-stack">ASP.NET Core &nbsp;|&nbsp; SignalR &nbsp;|&nbsp; JavaScript</div>
+          <p>Web-based chat app with user presence tracking, private &amp; public messaging, and a modern responsive UI.
+          </p>
+        </div>
+
+        <div class="proj-item">
+          <strong>Task Management System</strong>
+          <div class="proj-stack">ASP.NET Core MVC &nbsp;|&nbsp; EF Core &nbsp;|&nbsp; SQL Server</div>
+          <p>Multi-user task tracker with roles, deadlines, and status filters built for scalability and
+            maintainability.</p>
+        </div>
+
+        <!-- <div class="proj-item">
+        <strong>Portfolio Website</strong>
+        <div class="proj-stack">HTML5 &nbsp;|&nbsp; CSS3 &nbsp;|&nbsp; JavaScript &nbsp;|&nbsp; EmailJS</div>
+        <p>Fully responsive personal portfolio showcasing projects, resume, and a functional contact form via EmailJS.</p>
+      </div> -->
+      </section>
+
+      <!-- Company Projects -->
+      <section>
+        <div class="sec-head"><i class="bi bi-building"></i>
+          <h2>Projects (Previous Company)</h2>
+        </div>
+        <hr class="sec-rule">
+
+        <div class="proj-item">
+          <strong>Half-Yearly & Annual Filing Submission System</strong>
+          <div class="proj-stack">ASP.NET Web App &nbsp;|&nbsp; JSON &nbsp;|&nbsp; SQL Server &nbsp;</div>
+          <p>
+            Developed a dynamic filing system for half-yearly and annual submissions using JSON-driven forms with
+            dynamic field management and HTML generation.
+          </p>
+        </div>
+
+        <div class="proj-item">
+          <strong>Automation Penalty System</strong>
+          <div class="proj-stack">C# &nbsp;|&nbsp; SQL Server &nbsp;|&nbsp; Email Service</div>
+          <p>Automated engine calculating penalties based on submission delays and compliance issues with email alerts
+            sent to stakeholders.</p>
+        </div>
+
+        <div class="proj-item">
+          <strong>Single Filing API</strong>
+          <div class="proj-stack">.NET Core API &nbsp;|&nbsp; REST &nbsp;|&nbsp; JSON</div>
+          <p>Secure API bridging submission flow between BSE and NSE exchanges, ensuring standardized and consistent
+            data handling.</p>
+        </div>
+
+        <div class="proj-item">
+          <strong>Admin Dashboard</strong>
+          <div class="proj-stack">ASP.NET Core MVC &nbsp;|&nbsp; EPPlus &nbsp;|&nbsp; Bootstrap</div>
+          <p>Admin panel with MIS reports, submission analytics, and member activity tracking with export functionality
+            to Excel and PDF.</p>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section>
+        <div class="sec-head"><i class="bi bi-trophy-fill"></i>
+          <h2>Achievements</h2>
+        </div>
+        <hr class="sec-rule">
+
+        <div class="ach-item">
+          <div class="ach-icon"><i class="bi bi-award-fill"></i></div>
+          <div>
+            <h4>Employee of the Month</h4>
+            <p>Recognized for outstanding performance and key contributions to team success.</p>
+            <div class="ach-date">March 2024 &nbsp;|&nbsp; Microvista Technologies Pvt. Ltd.</div>
+          </div>
+        </div>
+
+        <div class="ach-item">
+          <div class="ach-icon"><i class="bi bi-star-fill"></i></div>
+          <div>
+            <h4>Emerging Talent of the Year</h4>
+            <p>Awarded for exceptional skills and strong commitment to learning and growth in software development.</p>
+            <div class="ach-date">2023–24 &nbsp;|&nbsp; Microvista Technologies Pvt. Ltd.</div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
 </body>
 
 </html>
