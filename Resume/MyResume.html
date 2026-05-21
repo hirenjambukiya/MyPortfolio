@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hiren Jambukiya – .NET Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <style>
     *,
@@ -17,92 +19,100 @@
     }
 
     :root {
-      --primary: #7e8981;
-      --primary-dark: #6a756e;
-      --bg: #f8f9fa;
+      --sidebar-bg: #EEF3FB;
+      --accent: #2563EB;
+      --accent-soft: #DBEAFE;
+      --accent-mid: #1D4ED8;
+      --bg: #F4F6FA;
       --white: #ffffff;
-      --text: #212529;
-      --gray: #6c757d;
-      --light: #f0f2f0;
-      --border: #d6dbd7;
+      --text: #1E2A3B;
+      --gray: #5A6A7E;
+      --light: #F0F4FF;
+      --border: #D0DAF0;
+
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
-      padding: 20px 15px;
+      padding: 24px 16px;
     }
 
     .resume {
       display: grid;
-      grid-template-columns: 28% 72%;
-      max-width: 1050px;
+      grid-template-columns: 268px 1fr;
+      max-width: 1060px;
       margin: auto;
       background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
       overflow: hidden;
     }
 
     /* ══ SIDEBAR ══ */
     .sidebar {
-      background: var(--primary);
-      color: #ffffff;
+      /* background: var(--sidebar-bg); */
+      color: var(--text);
       padding: 30px 18px;
       display: flex;
       flex-direction: column;
       gap: 0;
+      border-right: 1px solid var(--border);
     }
 
-    /* avatar */
     .avatar-wrap {
       text-align: center;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
 
     .avatar {
-      width: 100px;
-      height: 100px;
+      width: 92px;
+      height: 92px;
       border-radius: 50%;
-      border: 3px solid rgba(255, 255, 255, 0.7);
-      background: var(--primary-dark);
+      border: 3px solid var(--accent);
+      background: var(--white);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
+      color: var(--accent);
+      margin-bottom: 11px;
+      font-family: 'Playfair Display', serif;
+      box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.10);
     }
 
     .avatar-wrap h2 {
-      font-size: 17px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 700;
       line-height: 1.3;
       margin-bottom: 4px;
+      font-family: 'Playfair Display', serif;
+      color: var(--text);
     }
 
     .avatar-wrap .role {
-      font-size: 11.5px;
-      opacity: 0.85;
-      font-weight: 400;
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.03em;
     }
 
     /* sidebar section */
     .s-sec {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      margin-top: 16px;
+      padding-top: 13px;
+      border-top: 1px solid var(--border);
     }
 
     .s-sec h3 {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .10em;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: .16em;
       text-transform: uppercase;
       margin-bottom: 10px;
-      opacity: 0.75;
+      color: var(--accent);
     }
 
     /* contact */
@@ -110,46 +120,87 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
     }
 
     .contact-list li {
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      font-size: 12px;
+      font-size: 11.5px;
       line-height: 1.5;
+      color: var(--gray);
     }
 
     .contact-list li i {
-      font-size: 13px;
+      font-size: 12px;
       margin-top: 1px;
       flex-shrink: 0;
-      opacity: 0.85;
+      color: var(--accent);
     }
 
     .contact-list a {
-      color: #fff;
+      color: var(--accent-mid);
       text-decoration: none;
     }
 
-    /* skill list */
-    .skill-list {
-      list-style: none;
+    /* ── Tech Skill Categories ── */
+    .tech-cat {
+      margin-bottom: 10px;
+    }
+
+    .tech-cat:last-child {
+      margin-bottom: 0;
+    }
+
+    .tech-cat-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: 6px;
     }
 
-    .skill-list li {
-      font-size: 12px;
-      padding: 4px 10px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 4px;
-      line-height: 1.4;
+    .tech-cat-label i {
+      font-size: 10px;
     }
 
-    /* plain bullet list */
+    .tech-cat-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .tech-bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .tech-bullet-list li {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray);
+    }
+
+    .tech-bullet-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* soft skills — simple */
     .bullet-list {
       list-style: none;
       display: flex;
@@ -162,6 +213,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      color: var(--gray);
     }
 
     .bullet-list li::before {
@@ -169,52 +221,86 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.7);
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* language list */
+    .lang-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .lang-list li {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray);
+    }
+
+    .lang-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
       flex-shrink: 0;
     }
 
     /* ══ MAIN ══ */
     .main {
-      padding: 30px 30px;
+      padding: 30px 32px;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
 
-    /* section header */
     .sec-head {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
+      gap: 9px;
+      margin-bottom: 5px;
     }
 
-    .sec-head i {
-      color: var(--primary);
-      font-size: 16px;
+    .sec-icon {
+      width: 27px;
+      height: 27px;
+      background: var(--light);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 13px;
+      flex-shrink: 0;
     }
 
     .sec-head h2 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--primary-dark);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--accent-mid);
       text-transform: uppercase;
-      letter-spacing: .06em;
+      letter-spacing: .09em;
     }
 
     .sec-rule {
       border: none;
-      border-top: 2px solid var(--primary);
+      border-top: 2px solid var(--border);
       margin-bottom: 14px;
-      opacity: 0.4;
     }
 
     /* about */
     .about-text {
       font-size: 13px;
-      line-height: 1.75;
+      line-height: 1.8;
       color: var(--gray);
       text-align: justify;
+    }
+
+    .about-text strong {
+      color: var(--text);
     }
 
     /* experience */
@@ -224,16 +310,19 @@
 
     .exp-item h3 {
       font-size: 13.5px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text);
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     .exp-item .meta {
-      font-size: 12px;
-      color: var(--primary-dark);
-      font-weight: 500;
-      margin-bottom: 8px;
+      font-size: 11.5px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 9px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .exp-item ul {
@@ -246,7 +335,11 @@
     .exp-item ul li {
       font-size: 13px;
       color: var(--gray);
-      line-height: 1.55;
+      line-height: 1.6;
+    }
+
+    .exp-item ul li strong {
+      color: var(--text);
     }
 
     /* education */
@@ -254,12 +347,12 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 10px;
+      gap: 12px;
     }
 
     .edu-row h3 {
       font-size: 13.5px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text);
       margin-bottom: 3px;
     }
@@ -276,38 +369,31 @@
 
     .cgpa-badge {
       display: inline-block;
-      background: var(--light);
-      border: 1px solid var(--border);
-      color: var(--primary-dark);
+      background: var(--accent);
+      color: #fff;
       border-radius: 20px;
-      padding: 2px 10px;
+      padding: 3px 12px;
       font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 4px;
+      font-weight: 700;
     }
 
-    .edu-year {
-      font-size: 11.5px;
-      color: var(--gray);
-    }
-
-    /* projects — resume style, no cards */
+    /* projects */
     .proj-item {
-      margin-bottom: 10px;
+      margin-bottom: 11px;
       padding-left: 12px;
-      border-left: 2px solid var(--border);
+      border-left: 2px solid var(--accent);
     }
 
     .proj-item strong {
       font-size: 13px;
       color: var(--text);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .proj-item .proj-stack {
       font-size: 11px;
-      color: var(--primary-dark);
-      font-weight: 500;
+      color: var(--accent-mid);
+      font-weight: 600;
       margin: 2px 0 4px;
     }
 
@@ -320,28 +406,28 @@
     /* achievements */
     .ach-item {
       display: flex;
-      gap: 10px;
+      gap: 11px;
       margin-bottom: 12px;
       align-items: flex-start;
     }
 
     .ach-icon {
-      width: 32px;
-      height: 32px;
+      width: 33px;
+      height: 33px;
       flex-shrink: 0;
       background: var(--light);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary-dark);
+      color: var(--accent);
       font-size: 14px;
     }
 
     .ach-item h4 {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text);
       margin-bottom: 2px;
     }
@@ -354,8 +440,8 @@
 
     .ach-date {
       font-size: 11px;
-      color: var(--primary-dark);
-      font-weight: 500;
+      color: var(--accent);
+      font-weight: 600;
       margin-top: 3px;
     }
 
@@ -409,26 +495,70 @@
         </ul>
       </div>
 
-      <!-- Technical Skills -->
+      <!-- Technical Skills — Categorised -->
       <div class="s-sec">
         <h3>Technical Skills</h3>
-        <ul class="skill-list">
-          <li>ASP.NET Core MVC</li>
-          <li>.NET Core APIs</li>
-          <li>.NET Framework</li>
-          <li>C# &amp; LINQ</li>
-          <li>Entity Framework</li>
-          <li>Dapper</li>
-          <li>SignalR</li>
-          <li>SQL Server</li>
-          <li>MySQL &amp; PostgreSQL</li>
-          <li>React JS (Basic)</li>
-          <li>HTML5, CSS3, Bootstrap</li>
-          <li>JavaScript</li>
-          <li>VBA</li>
-          <li>Git &amp; SVN</li>
-          <li>IIS, GitHub Pages</li>
-        </ul>
+
+        <div class="tech-cat">
+          <div class="tech-cat-label"><i class="bi bi-server"></i> Backend &amp; Frameworks</div>
+          <ul class="tech-bullet-list">
+            <li>ASP.NET Core MVC</li>
+            <li>.NET Core APIs</li>
+            <li>ASP.NET Web Forms</li>
+            <li>Entity Framework</li>
+            <li>ADO.NET</li>
+            <li>Dapper</li>
+            <li>SignalR</li>
+          </ul>
+        </div>
+        <div class="tech-cat">
+          <div class="tech-cat-label"><i class="bi bi-diagram-3-fill"></i> Architecture</div>
+          <ul class="tech-bullet-list">
+            <li>MVC Pattern</li>
+            <li>REST Architecture</li>
+            <li>Repository Pattern</li>
+            <li>Clean Architecture</li>
+            <li>Microservices (Basic)</li>
+          </ul>
+        </div>
+        <div class="tech-cat">
+          <div class="tech-cat-label"><i class="bi bi-code-slash"></i> Languages</div>
+          <ul class="tech-bullet-list">
+            <li>C# &amp; LINQ</li>
+            <li>JavaScript</li>
+            <li>VBA</li>
+          </ul>
+        </div>
+
+        <div class="tech-cat">
+          <div class="tech-cat-label"><i class="bi bi-layout-text-window"></i> Frontend</div>
+          <ul class="tech-bullet-list">
+            <li>React JS</li>
+            <li>HTML5 &amp; CSS3</li>
+            <li>Bootstrap</li>
+          </ul>
+        </div>
+
+        <div class="tech-cat">
+          <div class="tech-cat-label"><i class="bi bi-database-fill"></i> Databases</div>
+          <ul class="tech-bullet-list">
+            <li>SQL Server</li>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </div>
+
+        <div class="tech-cat">
+          <div class="tech-cat-label"><i class="bi bi-tools"></i> DevOps &amp; Tools</div>
+          <ul class="tech-bullet-list">
+            <li>Git</li>
+            <li>SVN</li>
+            <li>IIS</li>
+            <li>GitHub Pages</li>
+            <li>Azure DevOps</li>
+            <li>CI/CD</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Soft Skills -->
@@ -446,10 +576,10 @@
       <!-- Languages -->
       <div class="s-sec">
         <h3>Languages</h3>
-        <ul class="bullet-list">
-          <li>English</li>
-          <li>Hindi</li>
-          <li>Gujarati</li>
+        <ul class="lang-list">
+          <li><span class="lang-dot"></span> English</li>
+          <li><span class="lang-dot"></span> Hindi</li>
+          <li><span class="lang-dot"></span> Gujarati</li>
         </ul>
       </div>
 
@@ -460,7 +590,8 @@
 
       <!-- About -->
       <section>
-        <div class="sec-head"><i class="bi bi-person-fill"></i>
+        <div class="sec-head">
+          <div class="sec-icon"><i class="bi bi-person-fill"></i></div>
           <h2>About Me</h2>
         </div>
         <hr class="sec-rule">
@@ -473,10 +604,27 @@
           professionally.
         </p>
       </section>
-
+      <!-- Education -->
+      <section>
+        <div class="sec-head">
+          <div class="sec-icon"><i class="bi bi-mortarboard-fill"></i></div>
+          <h2>Education</h2>
+        </div>
+        <hr class="sec-rule">
+        <div class="edu-row">
+          <div>
+            <h3>B.Tech in Computer Engineering</h3>
+            <p>Silver Oak University, Ahmedabad</p>
+          </div>
+          <div class="edu-right">
+            <h3>CGPA: 9.46 / 10</h3>
+          </div>
+        </div>
+      </section>
       <!-- Experience -->
       <section>
-        <div class="sec-head"><i class="bi bi-briefcase-fill"></i>
+        <div class="sec-head">
+          <div class="sec-icon"><i class="bi bi-briefcase-fill"></i></div>
           <h2>Experience</h2>
         </div>
         <hr class="sec-rule">
@@ -488,7 +636,8 @@
             <li>Designed, developed, and consumed <strong>RESTful APIs</strong> to enhance application functionality and
               streamline data flow across modules.</li>
             <li>Led end-to-end delivery of key features across <strong>frontend (HTML/CSS/Bootstrap/JS)</strong> and
-              <strong>backend (ASP.NET Core, C#, EF Core)</strong>.</li>
+              <strong>backend (ASP.NET Core, C#, EF Core)</strong>.
+            </li>
             <li>Built an <strong>XML-based submission and validation engine</strong> integrated with dynamic HTML report
               generation for regulatory compliance.</li>
             <li>Developed an <strong>automated penalty calculation engine</strong> with email notifications, reducing
@@ -501,26 +650,10 @@
         </div>
       </section>
 
-      <!-- Education -->
-      <section>
-        <div class="sec-head"><i class="bi bi-mortarboard-fill"></i>
-          <h2>Education</h2>
-        </div>
-        <hr class="sec-rule">
-        <div class="edu-row">
-          <div>
-            <h3>B.Tech in Computer Engineering</h3>
-            <p>Silver Oak University, Ahmedabad</p>
-          </div>
-          <div class="edu-right">
-            <div class="cgpa-badge">CGPA: 9.46 / 10</div>
-          </div>
-        </div>
-      </section>
-
       <!-- Personal Projects -->
       <section>
-        <div class="sec-head"><i class="bi bi-folder-fill"></i>
+        <div class="sec-head">
+          <div class="sec-icon"><i class="bi bi-folder-fill"></i></div>
           <h2>Projects (Self-Created)</h2>
         </div>
         <hr class="sec-rule">
@@ -546,28 +679,21 @@
           <p>Multi-user task tracker with roles, deadlines, and status filters built for scalability and
             maintainability.</p>
         </div>
-
-        <!-- <div class="proj-item">
-        <strong>Portfolio Website</strong>
-        <div class="proj-stack">HTML5 &nbsp;|&nbsp; CSS3 &nbsp;|&nbsp; JavaScript &nbsp;|&nbsp; EmailJS</div>
-        <p>Fully responsive personal portfolio showcasing projects, resume, and a functional contact form via EmailJS.</p>
-      </div> -->
       </section>
 
       <!-- Company Projects -->
       <section>
-        <div class="sec-head"><i class="bi bi-building"></i>
+        <div class="sec-head">
+          <div class="sec-icon"><i class="bi bi-building"></i></div>
           <h2>Projects (Previous Company)</h2>
         </div>
         <hr class="sec-rule">
 
         <div class="proj-item">
-          <strong>Half-Yearly & Annual Filing Submission System</strong>
-          <div class="proj-stack">ASP.NET Web App &nbsp;|&nbsp; JSON &nbsp;|&nbsp; SQL Server &nbsp;</div>
-          <p>
-            Developed a dynamic filing system for half-yearly and annual submissions using JSON-driven forms with
-            dynamic field management and HTML generation.
-          </p>
+          <strong>Half-Yearly &amp; Annual Filing Submission System</strong>
+          <div class="proj-stack">ASP.NET Web App &nbsp;|&nbsp; JSON &nbsp;|&nbsp; SQL Server</div>
+          <p>Developed a dynamic filing system for half-yearly and annual submissions using JSON-driven forms with
+            dynamic field management and HTML generation.</p>
         </div>
 
         <div class="proj-item">
@@ -594,7 +720,8 @@
 
       <!-- Achievements -->
       <section>
-        <div class="sec-head"><i class="bi bi-trophy-fill"></i>
+        <div class="sec-head">
+          <div class="sec-icon"><i class="bi bi-trophy-fill"></i></div>
           <h2>Achievements</h2>
         </div>
         <hr class="sec-rule">
@@ -616,7 +743,6 @@
             <div class="ach-date">2023–24 &nbsp;|&nbsp; Microvista Technologies Pvt. Ltd.</div>
           </div>
         </div>
-
       </section>
 
     </main>
